@@ -5,6 +5,10 @@ from motogp06_studio.core import validation as V, rider_parser as RP, demo
 from motogp06_studio.core.hex_editor import HexDocument
 from motogp06_studio.core.patch_engine import Patch, PatchError
 from motogp06_studio.core.compression_handler import scan_zlib, try_decompress
+from motogp06_studio.core.text_modder import (
+    TextReplacement, apply_replacements, find_text_occurrences,
+    preview_replacements, scan_ascii_strings,
+)
 
 class Base(unittest.TestCase):
     def setUp(self):
@@ -44,8 +48,10 @@ class TestBackup(Base):
 class TestHex(Base):
     def test_write_undo_redo_log(self):
         d = HexDocument(self.data); d.write(0x10, b"\x01\x02")
-        self.assertTrue(d.dirty); d.undo(); self.assertFalse(d.dirty)
-        d.redo(); self.assertEqual(d.data[0x10:0x12], b"\x01\x02"); self.assertEqual(len(d.log), 3)
+        self.assertTrue(d.dirty); self.assertEqual(d.changed_ranges(), [(0x10, 2)])
+        d.undo(); self.assertFalse(d.dirty); self.assertEqual(d.changed_ranges(), [])
+        d.redo(); self.assertEqual(d.data[0x10:0x12], b"\x01\x02")
+        self.assertEqual(d.changed_ranges(), [(0x10, 2)]); self.assertEqual(len(d.log), 3)
     def test_bounds_and_protect(self):
         d = HexDocument(self.data)
         with self.assertRaises(ValueError): d.write(len(d) - 1, b"\0\0")
@@ -90,6 +96,11 @@ class TestPatch(Base):
         with self.assertRaises(PatchError): p2.apply(bytes(other))
     def test_length_change_rejected(self):
         with self.assertRaises(PatchError): Patch.from_diff(b"ab", b"abc")
+    def test_patch_from_tracked_document_ranges(self):
+        doc = HexDocument(self.data); doc.write(0x100, b"PATCH")
+        p = Patch.from_document(doc)
+        self.assertEqual(p.apply(self.data), doc.export())
+        self.assertEqual(p.revert(doc.export()), self.data)
 
 class TestAnalyzer(Base):
     def test_strings_pointers_strides(self):
@@ -104,5 +115,76 @@ class TestAnalyzer(Base):
     def test_zlib_scan(self):
         blob = b"junk" * 5 + zlib.compress(b"hello world" * 20) + b"tail"
         r = scan_zlib(blob); self.assertTrue(r); self.assertEqual(try_decompress(blob, r[0][0]), b"hello world" * 20)
+
+class TestTextModder(Base):
+    def test_find_and_scan_printable_text(self):
+        data = b"\0Valentino ROSSI\0Yamaha Factory Team\xFFYZR-M1"
+        self.assertEqual(find_text_occurrences(data, "Valentino ROSSI"), (1,))
+        rows, truncated = scan_ascii_strings(data)
+        self.assertFalse(truncated)
+        self.assertEqual([(r.offset, r.text) for r in rows], [
+            (1, "Valentino ROSSI"), (17, "Yamaha Factory Team"), (37, "YZR-M1")])
+        limited, truncated = scan_ascii_strings(data, limit=1)
+        self.assertTrue(truncated); self.assertEqual(len(limited), 1)
+
+    def test_fixed_width_replace_all_is_one_undo(self):
+        data = b"Rossi\0 #46 Rossi\0"
+        doc = HexDocument(data)
+        rules = [TextReplacement("Rossi", "Loren", "Rider")]
+        preview = preview_replacements(doc.data, rules)
+        self.assertEqual(preview[0].offsets, (0, 11))
+        self.assertEqual(apply_replacements(doc, rules), 2)
+        self.assertEqual(bytes(doc.data), b"Loren\0 #46 Loren\0")
+        doc.undo()
+        self.assertEqual(bytes(doc.data), data)
+        doc.redo()
+        self.assertEqual(bytes(doc.data), b"Loren\0 #46 Loren\0")
+        self.assertEqual(len(doc), len(data))
+
+    def test_validation_rejects_unsafe_replacements_before_writing(self):
+        doc = HexDocument(b"Valentino ROSSI Honda")
+        with self.assertRaisesRegex(ValueError, "Panjang byte"):
+            apply_replacements(doc, [TextReplacement("Valentino ROSSI", "Marco Rossi", "Rider")])
+        with self.assertRaisesRegex(ValueError, "tidak ditemukan"):
+            apply_replacements(doc, [TextReplacement("Valentino ROSSX", "Valentino ROSSS", "Rider")])
+        with self.assertRaisesRegex(ValueError, "tidak ditemukan"):
+            apply_replacements(doc, [
+                TextReplacement("ROSSI", "LOREN", "Pembalap"),
+                TextReplacement("Suzuki", "Yamaha", "Motor"),
+            ])
+        self.assertEqual(bytes(doc.data), doc.original)
+        with self.assertRaises(ValueError):
+            preview_replacements(doc.data, [TextReplacement("Honda", "Honda Racing")])
+
+    def test_duplicate_and_overlapping_rules_rejected(self):
+        data = b"Yamaha Factory Team"
+        with self.assertRaisesRegex(ValueError, "tumpang-tindih"):
+            preview_replacements(data, [
+                TextReplacement("Yamaha", "Ducati", "Tim"),
+                TextReplacement("Yamaha Factory Team", "Ducati Factory Team", "Tim"),
+            ])
+        with self.assertRaisesRegex(ValueError, "lebih dari sekali"):
+            preview_replacements(data, [
+                TextReplacement("Yamaha", "Ducati", "Tim"),
+                TextReplacement("Yamaha", "Suzuki", "Motor"),
+            ])
+        with self.assertRaises(ValueError):
+            preview_replacements(data, [TextReplacement("Yamaha", "Yamaha", "Tim")])
+
+    def test_encoding_is_checked_in_bytes(self):
+        data = "Café".encode("cp1252")
+        self.assertEqual(find_text_occurrences(data, "Café", "cp1252"), (0,))
+        with self.assertRaisesRegex(ValueError, "Panjang byte"):
+            preview_replacements(data, [TextReplacement("Café", "École", encoding="cp1252")])
+        with self.assertRaisesRegex(ValueError, "encoding ascii"):
+            preview_replacements(data, [TextReplacement("Café", "Rase", encoding="ascii")])
+
+    def test_batch_write_checks_every_range_before_modifying(self):
+        doc = HexDocument(b"abcdefgh")
+        doc.protect(4, 6, "header")
+        with self.assertRaises(PermissionError):
+            doc.write_many([(0, b"XY", "first"), (4, b"ZZ", "protected")])
+        self.assertEqual(bytes(doc.data), b"abcdefgh")
+        self.assertFalse(doc.dirty)
 
 if __name__ == "__main__": unittest.main()

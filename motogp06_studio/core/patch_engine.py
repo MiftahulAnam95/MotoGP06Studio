@@ -31,6 +31,19 @@ class Patch:
                 p.entries.append(PatchEntry(start, original[start:i].hex(), modified[start:i].hex(), note)); start = None
         return p
 
+    @classmethod
+    def from_document(cls, document, note=""):
+        """Buat patch dari rentang yang sudah dilacak dokumen, tanpa memindai seluruh file."""
+        original = document.original
+        if len(original) != len(document.data):
+            raise PatchError("Panjang berbeda: patch offset-murni hanya untuk file berukuran sama.")
+        p = cls(hashlib.sha256(original).hexdigest(), len(original))
+        for offset, length in document.changed_ranges():
+            end = offset + length
+            p.entries.append(PatchEntry(
+                offset, original[offset:end].hex(), bytes(document.data[offset:end]).hex(), note))
+        return p
+
     def check_target(self, data: bytes):
         if len(data) != self.source_size:
             raise PatchError(f"Ukuran target {len(data)} != ukuran sumber {self.source_size}")
