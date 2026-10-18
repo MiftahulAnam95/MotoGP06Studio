@@ -24,5 +24,8 @@ Status: SEBAGIAN TERIDENTIFIKASI. Parser/dekompresor BELUM ada. Semua poin berla
 3. Cari tabel direktori (offset+ukuran) agar blok bisa diganti tanpa menggeser file; PNG selaras 2048 menunjukkan arsip berbasis sektor.
 4. Baru isi `TableSchema` rider dari data hasil dekompresi.
 
+## Dukungan aplikasi saat ini
+Studio menambahkan Editor Nama untuk mengganti urutan teks ASCII/encoding pilihan yang ditemukan persis di file, dengan panjang byte tetap. Fitur tersebut tidak membongkar token kompresi dan bukan bukti bahwa seluruh roster dapat diedit. Jika nama tidak ditemukan, ikuti langkah analisis di atas; jangan mengubah token dengan tebakan.
+
 ## Pembaruan (Laporan 02)
 - Lihat docs/REPORT_02_directory_analysis.md: 212 PNG valid, blok 0x2FDD000 dipadatkan sektor; tidak ada direktori terbukti; tabel offset suara kandidat di 0x52484FA/0x672C886.
