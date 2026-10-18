@@ -1,0 +1,99 @@
+file=/mnt/user-data/uploads/MOTOGP.DAT size=137224192 sha256=5ff77a248c00e2dfd1f65f0e3d45a320c4f787f7a95aa3b1beff64baae4e9d34
+
+== Valentino ROSSI: 10 kemunculan: ['0x94432', '0x956f3', '0x969ac', '0x97c73', '0x98f36', '0x9ce30', '0x9da11', '0x9e5f3', '0x9f1d8', '0x9fdb8']
+   jarak antar kemunculan: [4801, 4793, 4807, 4803, 16122, 3041, 3042, 3045, 3040]
+   offset mod 2048: [1074, 1779, 428, 1139, 1846, 1584, 529, 1523, 472, 1464]
+
+== Nicky HAYDEN: 10 kemunculan: ['0x94469', '0x9572a', '0x969e7', '0x97caa', '0x98f6d', '0x9ce6e', '0x9da4f', '0x9e635', '0x9f216', '0x9fdf6']
+   jarak antar kemunculan: [4801, 4797, 4803, 4803, 16129, 3041, 3046, 3041, 3040]
+   offset mod 2048: [1129, 1834, 487, 1194, 1901, 1646, 591, 1589, 534, 1526]
+
+== Colin EDWARDS: 0 kemunculan: []
+   jarak antar kemunculan: []
+   offset mod 2048: []
+
+== Max BIAGGI: 0 kemunculan: []
+   jarak antar kemunculan: []
+   offset mod 2048: []
+
+== Loris CAPIROSSI: 0 kemunculan: []
+   jarak antar kemunculan: []
+   offset mod 2048: []
+
+### Konteks Valentino ROSSI (24 byte sebelum / sesudah)
+0x94432  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 21 ff]  after[00 47 41 55 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f 60 18 29 ff 20]
+        before='2*...Profil....Seaso(+!.' after='.GAU.m1a.AGV.ITA.Co`.). '
+0x956F3  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 21 ff]  after[00 47 41 55 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f 60 18 29 ff 20]
+        before='2*...Profil....Seaso(+!.' after='.GAU.m1a.AGV.ITA.Co`.). '
+0x969AC  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 21 ff]  after[00 47 41 55 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f 60 18 2d ff 20]
+        before='2*...Profil....Seaso(+!.' after='.GAU.m1a.AGV.ITA.Co`.-. '
+0x97C73  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 21 ff]  after[00 47 41 55 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f 60 18 29 ff 20]
+        before='2*...Profil....Seaso(+!.' after='.GAU.m1a.AGV.ITA.Co`.). '
+0x98F36  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 21 ff]  after[00 47 41 55 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f 60 18 29 ff 20]
+        before='2*...Profil....Seaso(+!.' after='.GAU.m1a.AGV.ITA.Co`.). '
+0x9CE30  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 23 ff]  after[00 43 41 4d 30 36 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f a0 18 07]
+        before='2*...Profil....Seaso(+#.' after='.CAM06.m1a.AGV.ITA.Co...'
+0x9DA11  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 23 ff]  after[00 43 41 4d 30 36 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f a0 18 07]
+        before='2*...Profil....Seaso(+#.' after='.CAM06.m1a.AGV.ITA.Co...'
+0x9E5F3  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 23 ff]  after[00 43 41 4d 30 36 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f a0 18 07]
+        before='2*...Profil....Seaso(+#.' after='.CAM06.m1a.AGV.ITA.Co...'
+0x9F1D8  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 23 ff]  after[00 43 41 4d 30 36 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f a0 18 07]
+        before='2*...Profil....Seaso(+#.' after='.CAM06.m1a.AGV.ITA.Co...'
+0x9FDB8  before[32 2a 02 05 ff 50 72 6f 66 69 6c a6 04 04 ff 53 65 61 73 6f 28 2b 23 ff]  after[00 43 41 4d 30 36 00 6d 31 61 00 41 47 56 00 49 54 41 00 43 6f a0 18 07]
+        before='2*...Profil....Seaso(+#.' after='.CAM06.m1a.AGV.ITA.Co...'
+
+### Kesamaan byte antar kemunculan (dari nama ke belakang / ke depan)
+pasangan (i,j): sama_ke_depan / sama_ke_belakang
+0 [(136616910, 607282), (51, 316), (36, 316), (292, 316), (882, 1765), (16, 1), (16, 1), (16, 1), (16, 1), (16, 1)]
+1 [(51, 316), (136612109, 612083), (36, 316), (51, 316), (51, 316), (16, 1), (16, 1), (16, 1), (16, 1), (16, 1)]
+2 [(36, 316), (36, 316), (136607316, 616876), (36, 316), (36, 316), (16, 1), (16, 1), (16, 1), (16, 1), (16, 1)]
+3 [(292, 316), (51, 316), (36, 316), (136602509, 621683), (292, 316), (16, 1), (16, 1), (16, 1), (16, 1), (16, 1)]
+4 [(882, 1765), (51, 316), (36, 316), (292, 316), (136597706, 626486), (16, 1), (16, 1), (16, 1), (16, 1), (16, 1)]
+5 [(16, 1), (16, 1), (16, 1), (16, 1), (16, 1), (136581584, 642608), (58, 1332), (50, 317), (435, 317), (598, 1332)]
+6 [(16, 1), (16, 1), (16, 1), (16, 1), (16, 1), (58, 1332), (136578543, 645649), (50, 317), (58, 317), (58, 2428)]
+7 [(16, 1), (16, 1), (16, 1), (16, 1), (16, 1), (50, 317), (50, 317), (136575501, 648691), (50, 317), (50, 317)]
+8 [(16, 1), (16, 1), (16, 1), (16, 1), (16, 1), (435, 317), (58, 317), (50, 317), (136572456, 651736), (435, 317)]
+9 [(16, 1), (16, 1), (16, 1), (16, 1), (16, 1), (598, 1332), (58, 2428), (50, 317), (435, 317), (136569416, 654776)]
+
+### Urutan string ASCII (>=3) 700 byte setelah tiap kemunculan
+0x94432 ['Valentino ROSSI', 'GAU', 'm1a', 'AGV', 'ITA', 'Co`', ' EDWARDS', 'ARI', 'USA', 'Nicky HAYDEN', 'REP', 'rc211va', ' BIAGGI', 'SUO', 'rco MELAND@', 'MOV', 'NOL', ' GIBERN', 'SPA', 'Loris CAPI', 'DUC', 'desmosedicib', 'Carlo ', 'HECA', 'XLT', 'Alex BAR', 'CAM$', 'BRA', 'Troy', 'YLISS', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JPN', 'HOFMANN', 'SHO', 'GER', 'Toni ELIAS', 'FOR`$']
+0x956f3 ['Valentino ROSSI', 'GAU', 'm1a', 'AGV', 'ITA', 'Co`', ' EDWARDS', 'ARI', 'E-U', 'Nicky HAYDEN', 'REP', 'rc211va', ' BIAGGI', 'SUO', 'rco MELAND@', 'MOV', 'NOL', ' GIBERN', 'ESP', 'Loris CAPI', 'DUC', 'desmosedicib', 'Carlo ', 'HECA', 'XLT', 'Alex BAR', 'CAM$', 'BRE', 'Troy', 'YLISS', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JAP', 'HOFMANN', 'SHO', 'ALL', 'Toni ELIAS', 'FOR`$']
+0x969ac ['Valentino ROSSI', 'GAU', 'm1a', 'AGV', 'ITA', 'Co`', ' EDWARDS', 'ARI', 'E.E.U.U', 'Nicky HAYDEN', 'REP', 'rc211va', ' BIAGGI', 'SUO', 'rco MELAND', 'MOV', 'NOL', ' GIBERN@', 'ESP', 'Loris CAPIC', 'DUC', 'desmosedicib', 'Carlo ', 'HECA', 'XLT', 'Alex BAR', 'CAM$', 'BRA', 'Troy', 'YLISS', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JAP', 'HOFMANN', 'SHO', 'ALE', 'Toni ELIAS', 'FOR']
+0x97c73 ['Valentino ROSSI', 'GAU', 'm1a', 'AGV', 'ITA', 'Co`', ' EDWARDS', 'ARI', 'USA', 'Nicky HAYDEN', 'REP', 'rc211va', ' BIAGGI', 'SUO', 'rco MELAND@', 'MOV', 'NOL', ' GIBERN', 'SPA', 'Loris CAPI', 'DUC', 'desmosedicib', 'Carlo ', 'HECA', 'XLT', 'Alex BAR', 'CAM$', 'BRA', 'Troy', 'YLISS', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JPN', 'HOFMANN', 'SHO', 'DEU', 'Toni ELIAS', 'FOR`$']
+0x98f36 ['Valentino ROSSI', 'GAU', 'm1a', 'AGV', 'ITA', 'Co`', ' EDWARDS', 'ARI', 'USA', 'Nicky HAYDEN', 'REP', 'rc211va', ' BIAGGI', 'SUO', 'rco MELAND@', 'MOV', 'NOL', ' GIBERN', 'SPA', 'Loris CAPI', 'DUC', 'desmosedicib', 'Carlo ', 'HECA', 'XLT', 'Alex BAR', 'CAM$', 'BRA', 'Troy', 'YLISS', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JPN', 'HOFMANN', 'SHO', 'GER', 'Toni ELIAS', 'FOR`$']
+0x9ce30 ['Valentino ROSSI', 'CAM06', 'm1a', 'AGV', 'ITA', ' EDWARDS ', 'ARI', 'USA', 'Nicky HAYDEN', 'REP', 'rc211va', 'Dani PED', 'SPA', 'Loris CAPI', 'DUC', 'desmosedicia', 'SU2', 'S@:', ' GIBERNAU', 'Marco MELAND`', 'FOR`', 'NOL', 'ELIAS', 'XLT', 'Casey STONER', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'y DE PUNIET', 'SHK', 'FRA', 'Kenny`# ', 'TS JR', 'ROB', 'koto TAMAD', 'ON`', 'SUO', 'VERMEUL', 'SUZ ']
+0x9da11 ['Valentino ROSSI', 'CAM06', 'm1a', 'AGV', 'ITA', ' EDWARDS ', 'ARI', 'E-U', 'Nicky HAYDEN', 'REP', 'rc211va', 'Dani PED', 'ESP', 'Loris CAPI', 'DUC', 'desmosedicia', 'SU2', 'S@:', ' GIBERNAU', 'Marco MELAND`', 'FOR`', 'NOL', 'ELIAS', 'XLT', 'Casey STONER', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JAP', 'y DE PUNIET', 'SHK', 'FRA', 'Kenny`# ', 'TS JR', 'ROB', 'koto TAMAD', 'ON`', 'SUO', 'VERMEUL']
+0x9e5f3 ['Valentino ROSSI', 'CAM06', 'm1a', 'AGV', 'ITA', ' EDWARDS ', 'ARI', 'E.E.U.U', 'Nicky HAYDEN', 'REP', 'rc211va', 'Dani PED', 'ESP', 'Loris CAPIc', 'DUC', 'desmosedicia', 'SU2', ' GIBERNAU', 'Marco MELAND', 'FOR`', 'NOL', 'ELIAS', 'XLT', 'Casey STONER', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'JAP', 'R`5', 'y DE PUNIET', 'SHK', 'FRA', 'Kenny', 'TS JR', 'ROB', 'koto TAMAD', 'ON`', 'SUO', 'VERMEUL']
+0x9f1d8 ['Valentino ROSSI', 'CAM06', 'm1a', 'AGV', 'ITA', ' EDWARDS ', 'ARI', 'USA', 'Nicky HAYDEN', 'REP', 'rc211va', 'Dani PED', 'SPA', 'Loris CAPI', 'DUC', 'desmosedicia', 'SU2', 'S@:', ' GIBERNAU', 'Marco MELAND`', 'FOR`', 'NOL', 'ELIAS', 'XLT', 'Casey STONER', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'y DE PUNIET', 'SHK', 'FRA', 'Kenny`# ', 'TS JR', 'ROB', 'koto TAMAD', 'ON`', 'SUO', 'VERMEUL', 'SUZ ']
+0x9fdb8 ['Valentino ROSSI', 'CAM06', 'm1a', 'AGV', 'ITA', ' EDWARDS ', 'ARI', 'USA', 'Nicky HAYDEN', 'REP', 'rc211va', 'Dani PED', 'SPA', 'Loris CAPI', 'DUC', 'desmosedicia', 'SU2', 'S@:', ' GIBERNAU', 'Marco MELAND`', 'FOR`', 'NOL', 'ELIAS', 'XLT', 'Casey STONER', 'AUS', 'Shinya NAKANO', 'KAW', 'zxrrb', 'y DE PUNIET', 'SHK', 'FRA', 'Kenny`# ', 'TS JR', 'ROB', 'koto TAMAD', 'ON`', 'SUO', 'VERMEUL', 'SUZ ']
+
+### Jarak ROSSI -> HAYDEN / Honda per kemunculan
+0x94432 HAYDEN + 61  Honda + 743
+0x956f3 HAYDEN + 61  Honda + 742
+0x969ac HAYDEN + 65  Honda + 747
+0x97c73 HAYDEN + 61  Honda + 744
+0x98f36 HAYDEN + 61  Honda + 743
+0x9ce30 HAYDEN + 68  Honda + -642609
+0x9da11 HAYDEN + 68  Honda + -645650
+0x9e5f3 HAYDEN + 72  Honda + -648692
+0x9f1d8 HAYDEN + 68  Honda + -651737
+0x9fdb8 HAYDEN + 68  Honda + -654777
+
+### Posisi 'strID' dan 'nEntrant' (kandidat awal header field)
+strID: ['0x933fb', '0x94327', '0x955e8', '0x968a1', '0x97b68', '0x98e2b', '0x9bf0a', '0x9c3cf', '0x9cd25', '0x9d906', '0x9e4e8', '0x9f0cd', '0x9fcad', '0xa2f21']
+nEntrant/Entrant: ['0x9432e', '0x955ef', '0x968a8', '0x97b6f', '0x98e32', '0x9bbcc', '0x9cd2c', '0x9d90d', '0x9e4ef', '0x9f0d4', '0x9fcb4', '0xa2bfe']
+
+### Blok#0 vs blok#1 (window 0x400 mulai 0x140 sebelum nama): rasio kemiripan=0.983
+  replace  A[0x3:0x4]=1e  B[0x3:0x4]=22
+  insert   A[0x173:0x173]=  B[0x173:0x175]=45 2d
+  delete   A[0x174:0x176]=53 41  B[0x176:0x176]=
+  insert   A[0x1c9:0x1c9]=  B[0x1c9:0x1ca]=45
+  delete   A[0x1cb:0x1cc]=41  B[0x1cc:0x1cc]=
+  replace  A[0x21b:0x21c]=41  B[0x21b:0x21c]=45
+  insert   A[0x24d:0x24d]=  B[0x24d:0x24e]=41
+  delete   A[0x24e:0x24f]=4e  B[0x24f:0x24f]=
+  replace  A[0x264:0x267]=47 45 52  B[0x264:0x267]=41 4c 4c
+  replace  A[0x34e:0x34f]=09  B[0x34e:0x34f]=10
+  replace  A[0x35a:0x35e]=a0 28 03 ff  B[0x35a:0x35d]=52 41 00
+  replace  A[0x374:0x377]=4e 45 44  B[0x373:0x376]=50 2d 42
+  insert   A[0x400:0x400]=  B[0x3ff:0x400]=c0
